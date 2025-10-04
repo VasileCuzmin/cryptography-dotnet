@@ -7,16 +7,29 @@ return;
 
 static void TestAesCbc()
 {
-    const string original = "Text to encrypt";
+    // const string original = "Text to encrypt";
+    // var key = RandomNumberGenerator.GetBytes(32);
+    // var iv = RandomNumberGenerator.GetBytes(16);
+    //
+    // var encrypted = AesEncryption.Encrypt(Encoding.UTF8.GetBytes(original), key, iv);
+    // var decrypted = AesEncryption.Decrypt(encrypted, key, iv);
+    //
+    // var decryptedText = Encoding.UTF8.GetString(decrypted);
+    //
+    // Console.WriteLine("Original text = " + original);
+    // Console.WriteLine("Encrypted text = " + Convert.ToBase64String(encrypted));
+    // Console.WriteLine("Decrypted text = " + decryptedText);
+    
+    
+    
+    
     var key = RandomNumberGenerator.GetBytes(32);
-    var iv = RandomNumberGenerator.GetBytes(16);
+    var nonce = RandomNumberGenerator.GetBytes(12);
+    var associatedData = Encoding.UTF8.GetBytes("header");
 
-    var encrypted = AesEncryption.Encrypt(Encoding.UTF8.GetBytes(original), key, iv);
-    var decrypted = AesEncryption.Decrypt(encrypted, key, iv);
+    var (ciphertext, tag) = AesGcmEncryption.Encrypt(Encoding.UTF8.GetBytes("Hello AES-GCM!"), key, nonce, associatedData);
 
-    var decryptedText = Encoding.UTF8.GetString(decrypted);
+    var decrypted = AesGcmEncryption.Decrypt(ciphertext, key, nonce, tag, associatedData);
+    Console.WriteLine(Encoding.UTF8.GetString(decrypted)); // Output: Hello AES-GCM!
 
-    Console.WriteLine("Original text = " + original);
-    Console.WriteLine("Encrypted text = " + Convert.ToBase64String(encrypted));
-    Console.WriteLine("Decrypted text = " + decryptedText);
 }
