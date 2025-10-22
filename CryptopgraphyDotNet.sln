@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DES", "DES\DES.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripleDES", "TripleDES\TripleDES.csproj", "{BC47C90A-165F-4075-A923-433FDDEFD459}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA", "RSA\RSA.csproj", "{638C5508-C782-4E68-874E-B51B3A2413BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{BC47C90A-165F-4075-A923-433FDDEFD459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC47C90A-165F-4075-A923-433FDDEFD459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC47C90A-165F-4075-A923-433FDDEFD459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{638C5508-C782-4E68-874E-B51B3A2413BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{638C5508-C782-4E68-874E-B51B3A2413BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{638C5508-C782-4E68-874E-B51B3A2413BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{638C5508-C782-4E68-874E-B51B3A2413BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
